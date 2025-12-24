@@ -21,28 +21,29 @@ jobs:
       - name: Create build directory
         run: mkdir -p docs/build
 
-      - name: Read apps list and generate PDFs
+      - name: Generate PDFs for all apps and platforms
         run: |
-          # Install jq to parse JSON
           sudo apt-get update && sudo apt-get install -y jq
 
-          # Read app names from apps.json
           APPS=$(jq -r '.app[]' apps.json)
+          PLATFORMS=("android" "ios")
 
           for APP in $APPS; do
-            # Normalize app key for filenames (lowercase, no spaces)
-            APP_KEY=$(echo $APP | tr '[:upper:]' '[:lower:]' | tr -d ' ')
+            APP_KEY=$(echo "$APP" | tr '[:upper:]' '[:lower:]' | tr -d ' ')
             
-            docker run --rm \
-              -v ${{ github.workspace }}/docs:/documents \
-              asciidoctor/docker-asciidoctor:main.main \
-              asciidoctor-pdf \
-              --failure-level=WARN \
-              -a app=$APP_KEY \
-              -a app-name="$APP" \
-              -a version=${VERSION} \
-              -o /documents/build/${APP_KEY}-v${VERSION}.pdf \
-              /docs/${APP_KEY}/main-${APP_KEY}.adoc
+            for PLATFORM in "${PLATFORMS[@]}"; do
+              docker run --rm \
+                -v "${{ github.workspace }}/docs:/documents" \
+                asciidoctor/docker-asciidoctor:main.main \
+                asciidoctor-pdf \
+                --failure-level=WARN \
+                -a app="$APP_KEY" \
+                -a platform="$PLATFORM" \
+                -a app-name="$APP" \
+                -a version="${VERSION}" \
+                -o "/documents/build/${APP_KEY}-${PLATFORM}-v${VERSION}.pdf" \
+                "/documents/apps/${APP_KEY}/main-${PLATFORM}.adoc"
+            done
           done
 
       - name: Upload PDFs to GitHub Release
