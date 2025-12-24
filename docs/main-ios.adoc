@@ -1,0 +1,16 @@
+= FileMaster Pro Manual
+include::attributes.adoc[]
+:ios:
+
+include::intro/intro.adoc[]
+
+== Key Features
+include::features/features.adoc[]
+
+== Installation
+include::installation/ios.adoc[]
+
+== Navigation and Usage
+include::usage/app-usage.adoc[]
+
+For more details, visit link:https://filemaster.example.com[FileMaster Pro Website].

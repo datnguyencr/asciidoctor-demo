@@ -1,0 +1,20 @@
+* Intuitive user interface for managing files
+* Secure file sharing with permissions
+* Fast file upload and download
+* Reusable references and shortcuts
+
+|===
+| Feature | FileMaster Pro | Typical File App
+
+| Secure sharing
+| ✅ | ⚠️
+
+| Folder hierarchy support
+| ✅ | ✅
+
+| Bulk upload/download
+| ✅ | ❌
+
+| Multi-platform sync
+| ✅ | ⚠️
+|===

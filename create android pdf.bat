@@ -1,1 +1,1 @@
-asciidoctor-pdf -a android=true -o outputs/FileMasterPro-Android.pdf docs/main.adoc
+asciidoctor-pdf -o outputs/FileMasterPro-Android.pdf docs/main-android.adoc

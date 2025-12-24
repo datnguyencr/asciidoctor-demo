@@ -1,1 +1,1 @@
-asciidoctor-pdf -a ios=true -o outputs/FileMasterPro-iOS.pdf docs/main.adoc
+asciidoctor-pdf -o outputs/FileMasterPro-iOS.pdf docs/main-ios.adoc
