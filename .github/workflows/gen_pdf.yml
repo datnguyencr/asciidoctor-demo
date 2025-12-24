@@ -19,23 +19,26 @@ jobs:
 
       - name: Generate Android PDF
         run: |
-          docker run --rm \
-            -v ${{ github.workspace }}/docs:/documents \
-            asciidoctor/docker-asciidoctor:main.main \
-            asciidoctor-pdf \
-            -a android=true \
-            -o /documents/build/FileMasterPro-Android.pdf \
-            /documents/main.adoc
+docker run --rm \
+  -v ${{ github.workspace }}/docs:/documents \
+  asciidoctor/docker-asciidoctor:main.main \
+  asciidoctor-pdf \
+  -a android=true \
+  -o /documents/build/FileMasterPro-Android.pdf \
+  /documents/main.adoc
+
 
       - name: Generate iOS PDF
         run: |
           docker run --rm \
-            -v ${{ github.workspace }}/docs:/documents \
-            asciidoctor/docker-asciidoctor:main.main \
-            asciidoctor-pdf \
-            -a ios=true \
-            -o /documents/build/FileMasterPro-iOS.pdf \
-            /documents/main.adoc
+docker run --rm \
+  -v ${{ github.workspace }}/docs:/documents \
+  asciidoctor/docker-asciidoctor:main.main \
+  asciidoctor-pdf \
+  -a ios=true \
+  -o /documents/build/FileMasterPro-iOS.pdf \
+  /documents/main.adoc
+
 
       - name: Upload PDFs as artifacts
         uses: actions/upload-artifact@v4
