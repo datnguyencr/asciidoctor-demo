@@ -1,6 +1,3 @@
 {
-    "app": [
-        "FileFast",
-        "SmoothFile"
-    ]
+  "app": ["FastFile", "SmoothFile"]
 }
