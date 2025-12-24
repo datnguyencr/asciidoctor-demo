@@ -1,0 +1,13 @@
+* Main Dashboard
+  * Access your recent files and folders
+  * Quick upload and download buttons
+* File Explorer
+  * Navigate directories efficiently
+  * Drag-and-drop support for moving files
+* Shared Files
+  * View files shared with you
+  * Set permissions and expiration
+
+NOTE: Always ensure you have proper permissions before sharing sensitive files.  
+TIP: Use the search bar to quickly locate files by name or tag.  
+WARNING: Avoid sharing confidential files over unsecured networks.

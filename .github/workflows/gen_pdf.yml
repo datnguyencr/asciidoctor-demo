@@ -1,0 +1,44 @@
+name: Generate PDF Manuals
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create build directory
+        run: mkdir -p docs/build
+
+      - name: Generate Android PDF
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/docs:/documents \
+            asciidoctor/docker-asciidoctor:main.main \
+            asciidoctor-pdf \
+            -a android=true \
+            -o /documents/build/FileMasterPro-Android.pdf \
+            /documents/main.adoc
+
+      - name: Generate iOS PDF
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/docs:/documents \
+            asciidoctor/docker-asciidoctor:main.main \
+            asciidoctor-pdf \
+            -a ios=true \
+            -o /documents/build/FileMasterPro-iOS.pdf \
+            /documents/main.adoc
+
+      - name: Upload PDFs as artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: FileMasterPro-PDFs
+          path: docs/build/*.pdf
