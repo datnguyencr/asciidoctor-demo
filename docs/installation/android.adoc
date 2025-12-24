@@ -1,0 +1,8 @@
+[source,bash]
+----
+# Download the APK from official site
+curl -O https://filemaster.example.com/downloads/FileMasterPro.apk
+
+# Install the APK
+adb install FileMasterPro.apk
+----
