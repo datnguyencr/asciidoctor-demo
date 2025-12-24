@@ -1,4 +1,4 @@
-= FileMaster Pro Manual
+= {app-name} Manual
 include::attributes.adoc[]
 :android:
 
@@ -12,4 +12,4 @@ include::installation/android.adoc[]
 
 == Navigation and Usage
 include::usage/app-usage.adoc[]
-For more details, visit link:https://filemaster.example.com[FileMaster Pro Website].
+For more details, visit link:https://filemaster.example.com[{app-name} Website].

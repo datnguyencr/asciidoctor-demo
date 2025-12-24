@@ -1,12 +1,12 @@
 === Install via Google Play Store (Recommended)
 
-For most users, installing FileMaster Pro from the Google Play Store is the safest and easiest option. Updates are handled automatically, and no manual setup is required.
+For most users, installing {app-name} from the Google Play Store is the safest and easiest option. Updates are handled automatically, and no manual setup is required.
 
 - Steps
 
 * Open the Google Play Store on your Android device
 
-* Search for FileMaster Pro
+* Search for {app-name}
 
 * Select the app published by the official developer
 
@@ -18,7 +18,7 @@ Direct Play Store Link
 
 You can also install directly using the Play Store link:
 
-link:https://play.google.com/store/apps/details?id=com.example.filemasterpro[FileMaster Pro on Google Play]
+link:https://play.google.com/store/apps/details?id=com.example.filemasterpro[{app-name} on Google Play]
 
 === Install via local PC
 

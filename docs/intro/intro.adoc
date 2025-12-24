@@ -1,4 +1,0 @@
-Welcome to **FileMaster Pro**, a powerful file management system application that allows users to **download, upload, and share files** effortlessly.  
-This manual guides you through installation, usage, and advanced features to make the most of the app.
-
-image::images/app-logo.png[FileMaster Pro Logo, width=200]

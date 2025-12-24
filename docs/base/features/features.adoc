@@ -4,7 +4,7 @@
 * Reusable references and shortcuts
 
 |===
-| Feature | FileMaster Pro | Typical File App
+| Feature | {app-name} | Typical File App
 
 | Secure sharing
 | ✅ | ⚠️
