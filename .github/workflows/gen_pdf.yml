@@ -12,10 +12,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Extract version from tag
-        run: |
-          echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_ENV
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_ENV
 
       - name: Create build directory
         run: mkdir -p docs/build
@@ -26,6 +27,7 @@ jobs:
             -v ${{ github.workspace }}/docs:/documents \
             asciidoctor/docker-asciidoctor:main.main \
             asciidoctor-pdf \
+            --failure-level=WARN \
             -o /documents/build/FileMasterPro-Android-v${VERSION}.pdf \
             /documents/main-android.adoc
 
@@ -35,11 +37,14 @@ jobs:
             -v ${{ github.workspace }}/docs:/documents \
             asciidoctor/docker-asciidoctor:main.main \
             asciidoctor-pdf \
+            --failure-level=WARN \
             -o /documents/build/FileMasterPro-iOS-v${VERSION}.pdf \
             /documents/main-ios.adoc
 
-      - name: Upload PDFs as artifacts
-        uses: actions/upload-artifact@v4
+      - name: Upload PDFs to GitHub Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: FileMasterPro-PDFs-v${{ env.VERSION }}
-          path: docs/build/*.pdf
+          files: |
+            docs/build/*.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
