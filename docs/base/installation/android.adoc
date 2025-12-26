@@ -1,0 +1,32 @@
+=== Install via Google Play Store (Recommended)
+
+For most users, installing {app-name} from the Google Play Store is the safest and easiest option. Updates are handled automatically, and no manual setup is required.
+
+- Steps
+
+* Open the Google Play Store on your Android device
+
+* Search for {app-name}
+
+* Select the app published by the official developer
+
+* Tap Install
+
+Once installed, tap Open to launch the app
+
+Direct Play Store Link
+
+You can also install directly using the Play Store link:
+
+link:https://play.google.com/store/apps/details?id=com.example.filemasterpro[{app-name} on Google Play]
+
+=== Install via local PC
+
+ [source,bash]
+----
+# Download the APK from official site
+curl -O https://filemaster.example.com/downloads/FileMasterPro.apk
+
+# Install the APK
+adb install FileMasterPro.apk
+----

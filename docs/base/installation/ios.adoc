@@ -1,0 +1,4 @@
+* Open the App Store.
+* Search for "{app-name}".
+* Tap **Install**.
+
